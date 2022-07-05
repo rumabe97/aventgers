@@ -1,0 +1,16 @@
+<header class="header-fixed">
+
+    <div class="header-limiter">
+
+        <h1><a href="#">Aven<span>gers</span></a></h1>
+
+        <nav>
+            <a (click)="navigate(item)" *ngFor="let item of navItems"
+               [ngClass]="activeItem === item?.name ? 'selected' : ''">
+                {{item?.name}}
+            </a>
+        </nav>
+
+    </div>
+
+</header>
