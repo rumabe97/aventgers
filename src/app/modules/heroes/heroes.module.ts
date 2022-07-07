@@ -3,16 +3,15 @@ import {CommonModule} from '@angular/common';
 
 import {HeroesRoutingModule} from './heroes-routing.module';
 import {SharedModule} from "../../shared/shared.module";
-import {CoreModule} from "../../core/core.module";
+import {HeroesListComponent} from "./heroes-list/heroes-list.component";
 
 
 @NgModule({
-    declarations: [],
+    declarations: [HeroesListComponent],
     imports: [
         CommonModule,
         HeroesRoutingModule,
         SharedModule,
-        CoreModule
     ]
 })
 export class HeroesModule {

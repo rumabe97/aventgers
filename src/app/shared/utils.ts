@@ -4,6 +4,7 @@ export function _clean(value : any): any {
 
     keys.forEach(key => {
         if (value[key]) {
+            // @ts-ignore
             cleaned[key] = value[key];
         }
     })

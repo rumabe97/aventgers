@@ -14,6 +14,6 @@ export class MarvelService {
     }
 
     getAllHeroes(query: any) {
-        return this._http.get<any>(`${this.url}/characters`, {params: new HttpParams({fromObject: _clean(query)})})
+        return this._http.get<any>(`${this.url}characters`, {params: new HttpParams({fromObject: _clean(query)})})
     }
 }
