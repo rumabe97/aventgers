@@ -7,7 +7,7 @@ const routes: Routes = [
     {
         path: '',
         component: HeroesListComponent,
-        resolve: [HeroesListResolver]
+        resolve: {response: HeroesListResolver}
     }
 ];
 
