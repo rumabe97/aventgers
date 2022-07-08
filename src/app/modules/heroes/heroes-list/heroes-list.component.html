@@ -1,1 +1,3 @@
-<p>heroes-list works!</p>
+<div class="container" (scroll)="onScroll($event)">
+    <app-hero-card *ngFor="let hero of data.results" [hero]="hero"></app-hero-card>
+</div>

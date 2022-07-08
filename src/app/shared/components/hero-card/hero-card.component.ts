@@ -13,5 +13,4 @@ export class HeroCardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
