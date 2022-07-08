@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {IHero} from "../../../shared/entities/hero";
+import {IList} from "../../../shared/entities/list";
 
 @Component({
     selector: 'app-heroes-list',
@@ -8,21 +8,13 @@ import {IHero} from "../../../shared/entities/hero";
     styleUrls: ['./heroes-list.component.scss']
 })
 export class HeroesListComponent implements OnInit {
-    data: IHero[] = [];
-    count: number = 0;
-    limit: number = 0;
-    offset: number = 0;
-    total: number = 0;
+    data!: IList;
 
     constructor(private _route: ActivatedRoute) {
     }
 
     ngOnInit(): void {
-        this.data = this._route.snapshot.data['response'].results;
-        this.count = this._route.snapshot.data['response'].count;
-        this.limit = this._route.snapshot.data['response'].limit;
-        this.offset = this._route.snapshot.data['response'].offset;
-        this.total = this._route.snapshot.data['response'].total;
+        this.data = this._route.snapshot.data['response'];
     }
 
 }
