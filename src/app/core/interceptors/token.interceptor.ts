@@ -22,7 +22,7 @@ export class TokenInterceptor implements HttpInterceptor {
         const hash = new Md5();
         hash.appendStr(new Date().getTime() + this.privateKey + this.token);
         const newReq = request.clone({
-            params: request.params.set('ts', new Date().getTime()).set('apiKey', this.token).set('hash', hash.end() as string)
+            params: request.params.set('ts', new Date().getTime()).set('apikey', this.token).set('hash', hash.end() as string)
         });
 
         return next.handle(newReq);
