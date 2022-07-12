@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {IList} from "../../../shared/entities/list";
 import {MarvelService} from "../../../core/services/marvel/marvel.service";
+import {LoadingService} from "../../../core/services/loading/loading.service";
+import {delay} from "rxjs";
 
 @Component({
     selector: 'app-heroes-list',
@@ -10,11 +12,13 @@ import {MarvelService} from "../../../core/services/marvel/marvel.service";
 })
 export class HeroesListComponent implements OnInit {
     data!: IList;
+    loading: boolean = false;
 
-    constructor(private _route: ActivatedRoute, private _marvelService: MarvelService) {
+    constructor(private _route: ActivatedRoute, private _marvelService: MarvelService, private _loadingService: LoadingService) {
     }
 
     ngOnInit(): void {
+        this.listenToLoading();
         this.data = this._route.snapshot.data['response'];
     }
 
@@ -28,5 +32,11 @@ export class HeroesListComponent implements OnInit {
                 }
             })
         }
+    }
+
+    listenToLoading(): void {
+        this._loadingService.loadingSub.pipe(delay(0)).subscribe((loading) => {
+            this.loading = loading;
+        })
     }
 }

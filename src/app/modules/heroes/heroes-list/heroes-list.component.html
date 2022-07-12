@@ -1,3 +1,7 @@
+<div *ngIf="loading" class="loader">
+    <app-loader></app-loader>
+</div>
+
 <div class="container" (scroll)="onScroll($event)">
     <app-hero-card *ngFor="let hero of data.results" [hero]="hero"></app-hero-card>
 </div>

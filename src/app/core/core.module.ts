@@ -5,6 +5,7 @@ import {MainLayoutComponent} from './layout/main-layout/main-layout.component';
 import {SharedModule} from "../shared/shared.module";
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {TokenInterceptor} from "./interceptors/token.interceptor";
+import {LoadingInterceptor} from "./interceptors/loading.interceptor";
 
 
 @NgModule({
@@ -23,6 +24,11 @@ import {TokenInterceptor} from "./interceptors/token.interceptor";
         {
             provide: HTTP_INTERCEPTORS,
             useClass: TokenInterceptor,
+            multi: true
+        },
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: LoadingInterceptor,
             multi: true
         }
     ]
