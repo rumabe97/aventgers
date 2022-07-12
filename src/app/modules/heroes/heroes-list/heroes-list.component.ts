@@ -12,13 +12,11 @@ import {delay} from "rxjs";
 })
 export class HeroesListComponent implements OnInit {
     data!: IList;
-    loading: boolean = false;
 
-    constructor(private _route: ActivatedRoute, private _marvelService: MarvelService, private _loadingService: LoadingService) {
+    constructor(private _route: ActivatedRoute, private _marvelService: MarvelService) {
     }
 
     ngOnInit(): void {
-        this.listenToLoading();
         this.data = this._route.snapshot.data['response'];
     }
 
@@ -32,11 +30,5 @@ export class HeroesListComponent implements OnInit {
                 }
             })
         }
-    }
-
-    listenToLoading(): void {
-        this._loadingService.loadingSub.pipe(delay(0)).subscribe((loading) => {
-            this.loading = loading;
-        })
     }
 }

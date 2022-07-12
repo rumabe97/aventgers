@@ -1,4 +1,9 @@
+<div *ngIf="loading" class="loader">
+    <app-loader></app-loader>
+</div>
+
 <app-header></app-header>
+
 <div class="main">
     <router-outlet></router-outlet>
 </div>
