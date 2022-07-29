@@ -1,10 +1,25 @@
+@import "src/assets/styles/inputs";
+
+:host(app-heroes-list) {
+  width: 100%;
+}
+
 .container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
-  height: 89vh;
+  height: 78vh;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 45vw;
+  margin: 2em auto auto;
 }

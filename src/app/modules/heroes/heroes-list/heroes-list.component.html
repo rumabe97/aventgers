@@ -1,3 +1,11 @@
+<div class="inputContainer" [formGroup]="search">
+    <div class="wrap-input100 validate-input" data-validate="Email or Username is required">
+        <input class="input100" type="text" formControlName="inputSearch"
+               [ngClass]="search.get('inputSearch')?.value ? 'has-val' :''">
+        <span class="focus-input100"></span>
+        <span class="label-input100">Search your hero</span>
+    </div>
+</div>
 <div class="container" (scroll)="onScroll($event)">
     <app-hero-card *ngFor="let hero of data.results" [hero]="hero"></app-hero-card>
 </div>
