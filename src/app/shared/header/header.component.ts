@@ -16,7 +16,9 @@ export class HeaderComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.activeItem = this._router.url === '/' ? 'Heroes' : this._router.url;
+        if(this._router.url !== '/') {
+            this.activeItem = this._router.url === '/heroes' ? 'Heroes' : this._router.url;
+        }
     }
 
     navigate(item: any) {
