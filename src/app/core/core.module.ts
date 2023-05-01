@@ -6,6 +6,7 @@ import {SharedModule} from "../shared/shared.module";
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {TokenInterceptor} from "./interceptors/token.interceptor";
 import {LoadingInterceptor} from "./interceptors/loading.interceptor";
+import {RouterModule} from "@angular/router";
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {LoadingInterceptor} from "./interceptors/loading.interceptor";
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
-        SharedModule
+        SharedModule,
+        RouterModule
     ],
     providers: [
         {
