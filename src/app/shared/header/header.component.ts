@@ -21,5 +21,6 @@ export class HeaderComponent implements OnInit {
 
     navigate(item: any) {
         this.activeItem = item?.name;
+        this._router.navigate([item?.route]).then()
     }
 }

@@ -1,10 +1,10 @@
 export const navItems = [
     {
         name: 'Heroes',
-        route: ''
+        route: 'heroes'
     },
     {
         name: 'My Team',
-        route: ''
+        route: 'my_team'
     }
 ]
